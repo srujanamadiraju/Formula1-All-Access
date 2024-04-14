@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Race list</title>
+    <style>
+        body {
+            background-color: #d37b5a; /* Red-orange background */
+            color: black; /* Black text color */
+            text-align: center; /* Center-align text within the body */
+            font-family: Arial, sans-serif; /* Set font family */
+        }
+
+        .race-item {
+            margin-bottom: 20px; /* Add space between race items */
+        }
+
+        .driver-button {
+            background-color: white; /* White background for buttons */
+            color: black; /* Black text color */
+            padding: 8px 15px; /* Padding for the button */
+            border: none; /* Remove border */
+            border-radius: 5px; /* Rounded corners */
+            font-size: 18px; /* Larger font size */
+            text-decoration: none; /* Remove underline */
+        }
+
+        .driver-button:hover {
+            background-color: #f0f0f0; /* Lighter background on hover */
+        }
+    </style>
+</head>
+<body>
+    <h1>RACES</h1>
+    {% for race in races %}
+    <div class="race-item">
+        <a href="{{ url_for('driver_details', Driver_Name=race['Driver_champ']) }}" class="driver-button">{{ race['Driver_champ'] }}</a>
+        <p>Team Name: {{ race['Team_name'] }}</p>
+        <p>Year: {{ race['year'] }}</p>
+        <p>Total Races: {{ race['total_races_that_year'] }}</p>
+    </div>
+    {% endfor %}
+</body>
+</html>

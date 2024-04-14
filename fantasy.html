@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Fantasy Team</title>
+    <style>
+        body {
+            background-color: orange; /* Set background color to orange */
+            font-family: Arial, sans-serif; /* Set font family for better readability */
+            text-align: center; /* Center-align text within the body */
+        }
+
+        .container {
+            max-width: 500px; /* Set maximum width for the form container */
+            margin: 50px auto; /* Center the form container */
+            padding: 20px; /* Add padding inside the container */
+            background-color: white; /* Set background color to white */
+            border: 2px solid black; /* Black border */
+            border-radius: 10px; /* Add rounded corners to the container */
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 18px; /* Larger font size for labels */
+            font-weight: bold; /* Bold text for labels */
+            text-align: left; /* Left-align labels */
+        }
+
+        input[type="text"], input[type="email"], select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px; /* Add gap between textboxes */
+            font-size: 16px; /* Larger font size for textboxes */
+            border: 2px solid black; /* Black border for textboxes */
+            border-radius: 5px; /* Rounded corners for textboxes */
+        }
+
+        input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px; /* Add gap between textboxes */
+            font-size: 16px; /* Larger font size for textboxes */
+        }
+
+        .button {
+            background-color: red; /* Red button color */
+            color: white; /* White text color */
+            padding: 10px 20px; /* Padding for the button */
+            border: none; /* Remove border */
+            border-radius: 5px; /* Rounded corners for the button */
+            cursor: pointer; /* Add cursor pointer on hover */
+            font-size: 16px; /* Larger font size for the button */
+        }
+
+        .button:hover {
+            background-color: darkred; /* Darker red color on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Create Fantasy Team</h1>
+        <form action="/create_team" method="POST" enctype="multipart/form-data">
+            <label for="team_name">Enter Fantasy Team Name:</label>
+            <input type="text" id="team_name" name="team_name" required>
+            <br>
+
+            <!-- Dynamic Dropdowns for Drivers, Circuit, Livery -->
+            <label for="driver">Select Driver:</label>
+            <select id="driver" name="driver" required>
+                {% for driver in drivers %}
+                <option value="{{ driver }}">{{ driver }}</option>
+                {% endfor %}
+            </select>
+            <br>
+
+            <label for="driver2">Select Driver 2:</label>
+            <select id="driver2" name="driver2" required>
+                {% for driver in drivers %}
+                <option value="{{ driver }}">{{ driver }}</option>
+                {% endfor %}
+            </select>
+            <br>
+
+            <label for="circuit">Select Circuit:</label>
+            <select id="circuit" name="circuit" required>
+                {% for circuit in circuits %}
+                <option value="{{ circuit }}">{{ circuit }}</option>
+                {% endfor %}
+            </select>
+            <br>
+
+            <label for="livery">Select Livery:</label>
+            <select id="livery" name="livery" required>
+                {% for livery in liveries %}
+                <option value="{{ livery }}">{{ livery }}</option>
+                {% endfor %}
+            </select>
+            <br>
+            <!-- End of Dynamic Dropdowns -->
+
+            <label for="logo">Upload Logo:</label>
+            <input type="file" id="logo" name="logo" accept="image/*">
+            <br>
+
+            <label for="email">Enter Email:</label>
+            <input type="email" id="email" name="email" required>
+            <br>
+            <br>
+            <a href="/create_team" class="button">CREATE TEAM</a>
+            
+        </form>
+            
+    </div>
+</body>
+</html>

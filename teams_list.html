@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEAMS</title>
+    <style>
+        body {
+            background-color: #ff6666; /* Set more red background color */
+            font-family: Arial, sans-serif; /* Set font family for better readability */
+            text-align: center; /* Center-align text within the body */
+        }
+
+        h1 {
+            color: black; /* Set heading color to black */
+            font-weight: bold; /* Make the heading bold */
+        }
+
+        ul {
+            list-style-type: none; /* Remove bullet points from the list */
+            padding: 0; /* Remove default padding */
+        }
+
+        li {
+            background-color: white; /* Set background color for each driver box */
+            margin-bottom: 10px; /* Add space between each driver box */
+            padding: 10px; /* Add padding inside each driver box */
+            border-radius: 5px; /* Add rounded corners to the boxes */
+        }
+
+        a {
+            text-decoration: none; /* Remove underline from links */
+            color: black; /* Set link color to black */
+            font-weight: bold; /* Make the text bold */
+        }
+    </style>
+</head>
+<body>
+    <h1>TEAMS</h1>
+    <ul>
+        {% for team in teams %}
+        <li><a href="/team_details/{{ team }}">{{ team }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

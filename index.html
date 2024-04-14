@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formula 1</title>
+    <style>
+        body {
+            background-image: url('/static/images/logocar.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-color: rgb(236, 230, 230);
+            
+            color: black; /* Set default text color */
+            font-family: 'Times New Roman', Times, serif; /* Set default font */
+        }
+
+        .container {
+            text-align: center; /* Align center for the whole container */
+            padding-top: 50px; /* Adjust to move the heading up */
+            max-width: 800px; /* Limit container width */
+            margin: 0 auto; /* Center container horizontally */
+        }
+
+        h1 {
+            color: black; /* Black color for the heading */
+            font-size: 3em; /* Increase font size */
+            text-transform: uppercase; /* Convert text to uppercase */
+            margin: 0; /* Remove default margin for h1 */
+        }
+
+        .button-list {
+            list-style-type: none; /* Remove default list styles */
+            padding: 0; /* Remove default padding */
+            text-align: left; /* Align buttons to the center */
+            margin-top: 20px; /* Add space above the button list */
+        }
+
+        .button {
+            display: inline-block;
+            padding: 20px 40px; /* Increased padding for bigger buttons */
+            margin-right: 60px; /* Add more margin between buttons */
+            margin-bottom: 20px; /* Add space below each button */
+            background-color: orange;
+            color: black;
+            text-decoration: none;
+            border-radius: 10px; /* Rounded corners */
+            text-transform: uppercase; /* Convert text to uppercase */
+            font-weight: bold; /* Bold text inside buttons */
+            font-size: 23px; /* Increase font size */
+            font-style: italic;
+        }
+
+        /* Additional style for the inserted image */
+        .custom-image {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body background="logocar.jpg">
+    <div class="container">
+        <h1>Welcome to Formula 1</h1>
+        <br>
+        <ul class="button-list">
+            <li><a href="/drivers" class="button">DRIVERS</a></li>
+            <li><a href="/teams" class="button">TEAMS</a></li>
+            <li><a href="/livery_form" class="button">LIVERY</a></li>
+            <li><a href="/races" class="button">RACES</a></li>
+            <li><a href="/fantasy" class="button">CREATE A FANTASY TEAM</a></li>
+            <li><a href="/circuits" class="button">CIRCUITS</a></li>
+        </ul>
+        <br>
+        <br>
+        <!-- Inserted image -->
+    </div>
+</body>
+</html>

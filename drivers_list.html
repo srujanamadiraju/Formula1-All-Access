@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DRIVERS</title>
+    <style>
+        body {
+            background-color: #f1a12a; /* Set even more red background color */
+            font-family: Arial, sans-serif; /* Set font family for better readability */
+            text-align: center; /* Center-align text within the body */
+        }
+
+        h1 {
+            color: black; /* Set heading color to black */
+            font-weight: bold; /* Make the heading bold */
+        }
+
+        ul {
+            list-style-type: none; /* Remove bullet points from the list */
+            padding: 0; /* Remove default padding */
+            display: flex; /* Use flexbox for layout */
+            flex-wrap: wrap; /* Allow wrapping items to next line */
+            justify-content: center; /* Center-align items horizontally */
+        }
+
+        li {
+            background-color: white; /* Set background color for each driver box */
+            margin: 10px; /* Add margin around each driver box */
+            padding: 10px; /* Add padding inside each driver box */
+            border-radius: 5px; /* Add rounded corners to the boxes */
+            width: 200px; /* Set width for each driver box */
+            text-align: center; /* Center-align text within the box */
+            display: inline-block; /* Display boxes inline */
+        }
+
+        a {
+            text-decoration: none; /* Remove underline from links */
+            color: black; /* Set link color to black */
+            font-weight: bold; /* Make the text bold */
+        }
+    </style>
+</head>
+<body>
+    <h1>DRIVERS</h1>
+    <ul>
+        {% for driver in drivers %}
+        <li><a href="/driver_details/{{ driver }}">{{ driver }}</a></li>
+        {% endfor %}
+    </ul>
+    <br>
+    <br>
+    <a href="/rankings" class="button">TOP 3 DRIVERS</a>
+</body>
+</html>

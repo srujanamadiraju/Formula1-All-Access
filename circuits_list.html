@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circuits List</title>
+    <style>
+        body {
+            background-color: #d37b5a; /* Red-orange background */
+            color: black; /* Black text color */
+            text-align: center; /* Center-align text within the body */
+            font-family: Arial, sans-serif; /* Set font family */
+            display: flex; /* Use flexbox for layout */
+            justify-content: center; /* Center-align items horizontally */
+            align-items: center; /* Center-align items vertically */
+            min-height: 100vh; /* Set minimum height to full viewport height */
+        }
+
+        .content {
+            max-width: 800px; /* Limit content width */
+            margin: auto; /* Center-align content horizontally */
+            padding: 20px; /* Add padding around content */
+            text-align: left; /* Align text to the left */
+        }
+
+        .race-item {
+            width: 100%; /* Set width for each race item */
+            padding: 20px; /* Add padding inside each race item */
+            background-color: white; /* White background for race items */
+            border-radius: 5px; /* Rounded corners */
+            margin-bottom: 20px; /* Add space between race items */
+            box-sizing: border-box; /* Include padding and border in the width */
+        }
+
+        .driver-button {
+            display: block; /* Display button as a block element */
+            background-color: #d37b5a; /* Red-orange background for buttons */
+            color: black; /* Black text color */
+            padding: 8px 15px; /* Padding for the button */
+            border: none; /* Remove border */
+            border-radius: 5px; /* Rounded corners */
+            font-size: 18px; /* Larger font size */
+            text-decoration: none; /* Remove underline */
+            margin-bottom: 10px; /* Add margin below button */
+        }
+
+        .driver-button:hover {
+            background-color: #f0f0f0; /* Lighter background on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1 style="margin-left: 20px;">List of Circuits</h1>
+        <div class="race-item">
+            {% for circuit in circuits %}
+            <div class="race-item">
+                <a href="{{ url_for('team_details', Team_name=circuit['Team_name']) }}" class="driver-button">{{ circuit['Team_name'] }}</a>
+                <p>Circuit Name: {{ circuit['circuit_name'] }}</p>
+                <p>Base: {{ circuit['Base'] }}</p>
+                <p>Year of Construction: {{ circuit['year_of_construction'] }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

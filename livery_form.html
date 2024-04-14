@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Team and Get Livery Info</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            background-color: #e875e6; /* Light gray background */
+            font-family: Arial, sans-serif; /* Set font family for better readability */
+            text-align: center; /* Center-align text within the body */
+        }
+
+        .container {
+            max-width: 500px; /* Set maximum width for the form container */
+            margin: 50px auto; /* Center the form container */
+            padding: 20px; /* Add padding inside the container */
+            background-color:orange; /* Set background color to white */
+            border: 2px solid red; /* Red border */
+            border-radius: 10px; /* Add rounded corners to the container */
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 18px; /* Larger font size for labels */
+            font-weight: bold; /* Bold text for labels */
+            text-align: left; /* Left-align labels */
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px; /* Add gap between textboxes */
+            font-size: 16px; /* Larger font size for textboxes */
+            border: 2px solid red; /* Red border for select boxes */
+            border-radius: 5px; /* Rounded corners for select boxes */
+        }
+
+        button {
+            background-color: orange; /* Orange button color */
+            color: white; /* White text color */
+            padding: 10px 20px; /* Padding for the button */
+            border: none; /* Remove border */
+            border-radius: 5px; /* Rounded corners for the button */
+            cursor: pointer; /* Add cursor pointer on hover */
+            font-size: 16px; /* Larger font size for the button */
+        }
+
+        button:hover {
+            background-color: darkorange; /* Darker orange color on hover */
+        }
+
+        #liveryInfo {
+            text-align: left; /* Left-align livery info */
+            margin-top: 20px; /* Add space above livery info */
+        }
+
+        .livery-name {
+            font-weight: bold; /* Bold livery names */
+            color: black; /* Black text color for livery names */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Select Team and Get Livery Info</h1>
+        <form id="liveryForm">
+            <label for="team_name">Select Team:</label>
+            <select name="team_name" id="team_name">
+                {% for team in teams %}
+                    <option value="{{ team['team_name'] }}">{{ team['team_name'] }}</option>
+                {% endfor %}
+            </select>
+            <br><br>
+            <button type="submit">Get Livery Info</button>
+        </form>
+        <div id="liveryInfo"></div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $('#liveryForm').submit(function (event) {
+                event.preventDefault(); // Prevent the form from submitting normally
+
+                var formData = $(this).serialize(); // Serialize form data
+
+                $.ajax({
+                    type: 'POST',
+                    url: '/get_livery_info',
+                    data: formData,
+                    success: function (response) {
+                        $('#liveryInfo').html(response); // Update the livery info div with the response
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

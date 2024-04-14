@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOP 3 DRIVERS</title>
+    <style>
+        body {
+            background-color: #f06891; /* Red background */
+            color: rgb(22, 1, 1); /* White text color */
+            text-align: center; /* Center-align text within the body */
+            font-family: Arial, sans-serif; /* Set font family */
+        }
+
+        h1 {
+            margin-top: 50px; /* Add margin to the top of the heading */
+        }
+
+        ul {
+            list-style-type: none; /* Remove default list styles */
+            padding: 0; /* Remove default padding */
+            display: flex; /* Use flexbox for layout */
+            justify-content: center; /* Center-align items horizontally */
+        }
+
+        li {
+            margin: 10px; /* Add margin around each list item */
+            padding: 10px; /* Add padding inside each list item */
+            background-color: #ede4e3; /* Red background for list items */
+            color: rgb(19, 18, 18); /* White text color */
+            border-radius: 5px; /* Rounded corners */
+            font-size: 18px; /* Larger font size */
+            animation: fadeIn 0.5s ease-in-out forwards; /* Animation effect */
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateX(-50px); } /* Initial state */
+            100% { opacity: 1; transform: translateX(0); } /* Final state */
+        }
+    </style>
+</head>
+<body>
+    <h1>TOP 3 DRIVERS</h1>
+    <ul>
+        {% for driver in drivers %}
+        <li style="animation-delay: {{ loop.index }}s;">{{ driver['Driver_Name'] }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

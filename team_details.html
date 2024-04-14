@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Details</title>
+    <style>
+        body {
+            background-color: #3480e4; /* Tinge of red background color */
+            font-family: Arial, sans-serif; /* Set font family for better readability */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 50%;
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: black;
+            text-align: center;
+        }
+
+        .details {
+            text-align: left; /* Align labels to the left */
+            margin-left: 20px; /* Add left margin for labels */
+        }
+
+        .details p {
+            margin-bottom: 10px;
+        }
+
+        /* Style for Team Name */
+        .team-name {
+            display: inline-block;
+            font-weight: bold; /* Bold text */
+            text-transform: uppercase; /* Convert text to uppercase */
+            color: #ff0000; /* Glittery red color */
+            text-shadow: 1px 1px 2px #ff0000, 0 0 1em #ff0000; /* Glitter effect */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Team Details</h1>
+        <div class="details">
+            <p><span class="team-name">{{ team_name }}</span></p>
+            <p><strong>CTO:</strong> {{ CTO }}</p>
+            <p><strong>Principal:</strong> {{ principal }}</p>
+            <p><strong>Driver1:</strong> {{ driver1 }}</p>
+            <p><strong>Driver2:</strong> {{ driver2 }}</p>
+            <!-- Add more details as needed -->
+        </div>
+    </div>
+</body>
+</html>

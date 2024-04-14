@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver Details</title>
+    <style>
+        body {
+            background-color: #ffcccc; /* Tinge of red background color */
+            font-family: Arial, sans-serif; /* Set font family for better readability */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 50%;
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: black;
+            text-align: center;
+        }
+
+        .details {
+            text-align: left; /* Align labels to the left */
+            margin-left: 20px; /* Add left margin for labels */
+        }
+
+        .details p {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Driver Details</h1>
+        <div class="details">
+            <p><strong>Name:</strong> {{ driver_name }}</p>
+            <p><strong>Team:</strong> {{ team }}</p>
+            <p><strong>Country:</strong> {{ country }}</p>
+            <p><strong>Podiums:</strong> {{ podiums }}</p>
+            <p><strong>Points:</strong> {{ points }}</p>
+            <!-- Add more details as needed -->
+        </div>
+    </div>
+</body>
+</html>
